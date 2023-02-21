@@ -101,14 +101,14 @@ export default function Home() {
                             <Input style={{ height: "40px" }} defaultValue={defaultValues.name} name='name' />
                         </Form.Item>
                         <h3 style={{ textAlign: "left" }}>* Sectors</h3>
-                        <Form.Item name="sector" rules={[{ required: true, message: 'Please Select a Sector!' }]}>
+                        {sectors.length && <Form.Item name="sector" rules={[{ required: true, message: 'Please Select a Sector!' }]}>
                             <TreeSelect
                                 defaultValue={defaultValues.sector}
                                 showSearch
                                 allowClear
                                 treeData={sectors}
                             />
-                        </Form.Item>
+                        </Form.Item>}
                         <Form.Item name="termsagree" valuePropName='checked' rules={[{
                             required: true, transform: value => (value || undefined),
                             type: 'boolean', message: 'Please Accept the Terms!'
