@@ -69,7 +69,7 @@ export default function Home() {
                 });
 
         } else {
-            axios.put(`http://localhost:8000/userdata/api/updateuserdata/${recordID}`, values)
+            axios.put(`https://skilltest01.onrender.com/userdata/api/updateuserdata/${recordID}`, values)
                 .then((response) => {
                     update();
                 }).catch(err => {
