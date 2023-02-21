@@ -43,20 +43,18 @@ export default function ListView() {
                 </Col>
             </Row>
             <Row style={{ margin: 0, paddingTop: "50px" }} gutter={{ lg: 16, md: 16, sm: 8, xs: 8 }} >
-                {isLoading && <Spin size="large" style={{ textAlign: "center", width: "200px", margin: "auto", display: "block" }} />}
-                {
-                    userDataList.map(item => <Col xs={12} sm={12} md={8} lg={8} key={item._id} style={{ marginBottom: "10px" }}>
-                        <Card title={item.name} bordered={false} style={{
-                            backgroundColor: "darkslategray",
-                            color: "#ffffff",
-                            boxShadow: "2px 2px 3px 0px #000000",
-                            fontSize: "15px"
-                        }}>
-                            <p><span style={{ fontWeight: "700" }}>Sector Name</span>: {item.sector}</p>
-                            {item.termsagree === true ? <p><span style={{ fontWeight: "700" }}>Term</span>: Agreed On Terms</p> : <p>Not Agreed On Terms</p>}
-                        </Card>
-                    </Col>
-                    )
+                {userDataList.length ? userDataList.map(item => <Col xs={12} sm={12} md={8} lg={8} key={item._id} style={{ marginBottom: "10px" }}>
+                    <Card title={item.name} bordered={false} style={{
+                        backgroundColor: "darkslategray",
+                        color: "#ffffff",
+                        boxShadow: "2px 2px 3px 0px #000000",
+                        fontSize: "15px"
+                    }}>
+                        <p><span style={{ fontWeight: "700" }}>Sector Name</span>: {item.sector}</p>
+                        {item.termsagree === true ? <p><span style={{ fontWeight: "700" }}>Term</span>: Agreed On Terms</p> : <p>Not Agreed On Terms</p>}
+                    </Card>
+                </Col>
+                ) : <Spin size="large" style={{ textAlign: "center", width: "200px", margin: "auto", display: "block" }} />
                 }
 
             </Row>
