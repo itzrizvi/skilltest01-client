@@ -99,11 +99,12 @@ export default function Home() {
                         <h3 style={{ textAlign: "left" }}>* Name</h3>
                         <Form.Item name="name" rules={[{ required: true, message: 'Please Input Your Name!' }]}>
 
-                            <Input style={{ height: "40px" }} defaultValue={defaultValues.name} name='name' />
+                            <Input style={{ height: "40px" }} placeholder="Enter Your Name" defaultValue={defaultValues.name} name='name' />
                         </Form.Item>
                         <h3 style={{ textAlign: "left" }}>* Sectors</h3>
                         {sectors.length ? <Form.Item name="sector" rules={[{ required: true, message: 'Please Select a Sector!' }]}>
                             <TreeSelect
+                                placeholder="Search or Select Sectors"
                                 defaultValue={defaultValues.sector}
                                 showSearch
                                 allowClear
